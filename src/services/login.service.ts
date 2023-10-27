@@ -16,7 +16,6 @@ const loginServices = {
       }
 
       await page.type("input[name=loginKey]", credentials.email);
-      await page.screenshot({ path: "debug-screenshot.png" });
       await page.waitForSelector("input[name=loginKey]", { timeout: 60000 });
       await page.type("input[name=password]", credentials.password);
       await page.waitForSelector("input[name=password]", { timeout: 60000 });

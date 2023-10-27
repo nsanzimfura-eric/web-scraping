@@ -6,6 +6,10 @@ const ProductsServices = {
       await page.goto(listOfProductUrl, { waitUntil: "domcontentloaded" });
       // Find all product cards
       const productElements = await page.$$("div.shop-search-result-view");
+      await page.waitForSelector("div.shop-search-result-view", {
+        timeout: 60000,
+      });
+      console.log(productElements, "ccccccc");
 
       const productsList: any[] = [];
 
@@ -46,7 +50,6 @@ const ProductsServices = {
       // );
 
       // Loop through each product card and extract information
-      console.log(productElements, "xxxxx");
       for (const singleProduct of productElements) {
         const card = await singleProduct.$("a");
 
