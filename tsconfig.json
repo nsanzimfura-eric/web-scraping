@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "lib": ["dom", "es5", "es6"],
-    "target": "es6",
+    "target": "es2017",
     "moduleResolution": "node",
     "outDir": "./build",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
+    "noEmitHelpers": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   }
