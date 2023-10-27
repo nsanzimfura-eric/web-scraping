@@ -8,17 +8,18 @@ const loginServices = {
       await page.goto(loginUrl, { waitUntil: "domcontentloaded" });
 
       //   choose english language
-      await page.$$eval(
-        "language-selection__list-item.button",
-        async (btns: any) => {
-          if (btns) {
-            await page.click(btns[0]);
-          }
-        }
+      const buttonElement = await page.$(
+        "language-selection__list-item.button"
       );
+      if (buttonElement) {
+        await buttonElement.click();
+      }
 
       await page.type("input[name=loginKey]", credentials.email);
+      await page.screenshot({ path: "debug-screenshot.png" });
+      await page.waitForSelector("input[name=loginKey]", { timeout: 60000 });
       await page.type("input[name=password]", credentials.password);
+      await page.waitForSelector("input[name=password]", { timeout: 60000 });
       await page.click("button.wyhvVD");
 
       return true;

@@ -16,13 +16,12 @@ const ProductsController = {
       });
 
       const page = await context.newPage();
+      await page.setViewportSize({ width: 1920, height: 1080 });
       //login
       await loginServices.login(page);
 
       //get all products
       const productsList = await ProductsServices.getAllProducts(page);
-
-      console.log(productsList, "test products from controller");
 
       await browser.close();
       return res.status(200).json({
