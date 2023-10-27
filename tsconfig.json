@@ -2,7 +2,6 @@
   "compilerOptions": {
     "lib": ["dom", "es5", "es6"],
     "target": "es6",
-    // "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "./build",
     "emitDecoratorMetadata": true,

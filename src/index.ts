@@ -1,5 +1,3 @@
-import "dotenv/config";
-import "reflect-metadata";
 import express, { Application } from "express";
 import morgan from "morgan";
 import routes from "./routes/index";
