@@ -1,27 +1,25 @@
-import playwright from "playwright";
-import { listOfProductUrl } from "./constants/utils";
-import RandomUserAgent from "random-useragent";
+import "dotenv/config";
+import "reflect-metadata";
+import express, { Application } from "express";
+import morgan from "morgan";
+import routes from "./routes/index";
+import cors from "cors";
 
-const scrapProducts = async () => {
-  //get random agent
-  const agent = RandomUserAgent.getRandom();
+const app: Application = express();
 
-  try {
-    const browser = await playwright.chromium.launch({ headless: true });
-    const context = await browser.newContext({
-      bypassCSP: true,
-      userAgent: agent,
-    });
-    const page = await context.newPage();
-    await page.setDefaultTimeout(3000);
-    // await page.setViewportSize({ width: 1920, height: 1080 });
-    await page.goto(listOfProductUrl);
-    console.log(page, "tes");
-    await browser.close();
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
+app.use(express.json());
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan("dev"));
+app.use(express.static("public"));
 
-scrapProducts();
+const port = 4000;
+
+app.get("/", (req, res) => {
+  res.send("Welcome! Head to /products to get all products");
+});
+app.use("/api", routes);
+
+app.listen(port, async () => {
+  console.log(`App server listening on port ${port}`);
+});
