@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/nsanzimfura-eric/web-scraping/issues"
   },
-  "homepage": "https://github.com/nsanzimfura-eric/web-scraping#readme"
+  "homepage": "https://github.com/nsanzimfura-eric/web-scraping#readme",
+  "dependencies": {
+    "playwright": "^1.39.0"
+  }
 }
