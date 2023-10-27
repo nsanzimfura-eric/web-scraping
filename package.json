@@ -1,0 +1,26 @@
+{
+  "name": "web-scraping",
+  "version": "1.0.0",
+  "description": "web-scraping with Playwrite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsanzimfura-eric/web-scraping.git"
+  },
+  "keywords": [
+    "web",
+    "web-scraping",
+    "playwrite",
+    "nodejs",
+    "python"
+  ],
+  "author": "nsanzimfura-eric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nsanzimfura-eric/web-scraping/issues"
+  },
+  "homepage": "https://github.com/nsanzimfura-eric/web-scraping#readme"
+}
