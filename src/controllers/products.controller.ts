@@ -16,7 +16,7 @@ const ProductsController = {
       });
 
       const page = await context.newPage();
-      await page.setViewportSize({ width: 1920, height: 1080 });
+      // await page.setViewportSize({ width: 1920, height: 1080 });
       //login
       await loginServices.login(page);
 
